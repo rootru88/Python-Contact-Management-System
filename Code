@@ -1,0 +1,44 @@
+
+def search(contacts):
+    name=input("Enter a name:")
+    if name in contacts:
+        print(contacts[name])
+    else:
+        print("name not found")
+        
+def add(contacts):
+    how=int(input("Enter how many contacts do you want to save today:"))
+    count=0
+    while how!=count:
+        nam=input("Enter name:")
+        phon=input("Enter phone number:")
+        contacts[nam]=phon
+        count+=1
+
+def display_all(contacts):
+    for i in contacts:
+        print(i,contacts[i])
+
+def delete(contacts):
+    nu=input("Enter a name:")
+    if nu in contacts:
+        del contacts[nu]
+    else:
+        print("Contacts not found")
+
+over=""
+contacts={}
+while over!="quit":
+    num=int(input("Enter 1 for add,2 to del,3 to search,4 to display all:"))
+    if num==1:
+        add(contacts)
+    elif num==2:
+        delete(contacts)
+    elif num==3:
+        search(contacts)
+    elif num==4:
+        display_all(contacts)
+    else:
+        print("Invalid input")  
+
+    over=input("Enter quit to end:")
